@@ -7,9 +7,9 @@ namespace Network_Delay_Time
   {
     static void Main(string[] args)
     {
-      int[][] times = new int[3][] { new int[] { 2, 1, 1, }, new int[] { 2, 3, 1 }, new int[] { 3, 4, 1 } };
+      int[][] times = new int[3][] { new int[] { 1, 2, 1 }, new int[] { 2, 3, 2 }, new int[] { 1, 3, 4 } };
       Solution s = new Solution();
-      int result = s.NetworkDelayTime(times, 4, 2);
+      int result = s.NetworkDelayTime(times, 3, 1);
       Console.WriteLine(result);
     }
   }
@@ -31,6 +31,7 @@ namespace Network_Delay_Time
         adj[source] = existing;
       }
 
+      // Why PQ is required here, please debug will get the answer
       PriorityQueue<int, int> pq = new PriorityQueue<int, int>();
       pq.Enqueue(k, 0);
       HashSet<int> visited = new HashSet<int>();
